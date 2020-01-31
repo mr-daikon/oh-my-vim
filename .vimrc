@@ -11,10 +11,9 @@ Plugin 'python-mode/python-mode'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'liuchengxu/space-vim-dark'
-Plugin 'sjl/badwolf'
-Plugin 'ErichDonGubler/vim-sublime-monokai'
 Plugin 'Yggdroot/indentLine'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'sickill/vim-monokai'
 
 
 call vundle#end()            " required
@@ -23,7 +22,7 @@ filetype plugin indent on    " required
 
 set nocompatible
 syntax enable
-colorscheme space-vim-dark
+colorscheme monokai 
 "hi Comment guifg=#5C6370 ctermfg=59
 
 set ruler
