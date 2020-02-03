@@ -10,11 +10,16 @@ Plugin 'majutsushi/tagbar'
 Plugin 'python-mode/python-mode'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'liuchengxu/space-vim-dark'
 Plugin 'Yggdroot/indentLine'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'preservim/nerdcommenter'
+Plugin 'liuchengxu/space-vim-dark'
+Plugin 'ErichDonGubler/vim-sublime-monokai'
+Plugin 'kaicataldo/material.vim'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'sickill/vim-monokai'
-
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'mhartington/oceanic-next'
 
 call vundle#end()            " required
 
@@ -22,8 +27,25 @@ filetype plugin indent on    " required
 
 set nocompatible
 syntax enable
-colorscheme monokai 
-"hi Comment guifg=#5C6370 ctermfg=59
+set termguicolors
+set background=dark
+
+" COLOR SCHEME SETTINGS 
+" Nord
+"colorscheme nord 
+"let g:lightline = { 'colorscheme': 'nord' }
+"let g:airline_theme = "nord"
+
+" OceanicNext
+colorscheme OceanicNext
+let g:airline_theme='oceanicnext'
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+
+" Pale night
+
+"let g:palenight_terminal_italics=1
+
 
 set ruler
 set nu
@@ -58,7 +80,6 @@ map <F4> :TagbarToggle<CR>
 
 " Airline settigs
 set laststatus=2
-let g:airline_theme='badwolf'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
