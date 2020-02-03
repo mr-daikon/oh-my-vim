@@ -13,13 +13,10 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'preservim/nerdcommenter'
-Plugin 'liuchengxu/space-vim-dark'
-Plugin 'ErichDonGubler/vim-sublime-monokai'
-Plugin 'kaicataldo/material.vim'
-Plugin 'arcticicestudio/nord-vim'
 Plugin 'sickill/vim-monokai'
-Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'mhartington/oceanic-next'
+Plugin 'kyoz/purify', { 'rtp': 'vim' }
+Plugin 'morhetz/gruvbox' 
 
 call vundle#end()            " required
 
@@ -31,24 +28,22 @@ set termguicolors
 set background=dark
 
 " COLOR SCHEME SETTINGS 
-" Nord
-"colorscheme nord 
-"let g:lightline = { 'colorscheme': 'nord' }
-"let g:airline_theme = "nord"
-
 " OceanicNext
-colorscheme OceanicNext
-let g:airline_theme='oceanicnext'
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+"colorscheme OceanicNext
+"let g:airline_theme='oceanicnext'
+"let g:oceanic_next_terminal_bold = 1
+"let g:oceanic_next_terminal_italic = 1
 
-" Pale night
+" Purify
+" colorscheme purify
+" let g:airline_theme='purify'
 
-"let g:palenight_terminal_italics=1
+" gruvbox
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
 
 
-set ruler
-set nu
+set rnu
 set encoding=utf-8
 set ls=2
 set visualbell t_vb= 
