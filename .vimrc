@@ -49,12 +49,11 @@ set guioptions-=r   " scrolls
 " настройка на Tab
 set smarttab
 set tabstop=4
-set background=dark
 
-" Hardmode - hardcore mode on!!                                                                                              |~                                       
-" Please don't cry baby!!! T_T                                                                                               |~                                       
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()                                                            |~                                       
-let g:HardMode_level = 'wannabe'                                                                                             |~                                       
+" Hardmode - hardcore mode on!!
+" Please don't cry baby!!! T_T
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:HardMode_level = 'wannabe'
 let g:HardMode_hardmode_msg = 'Never give up, never surrender!'
 
 " NerdTree settings  *************
