@@ -13,10 +13,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'preservim/nerdcommenter'
-Plugin 'sickill/vim-monokai'
-Plugin 'mhartington/oceanic-next'
-Plugin 'kyoz/purify', { 'rtp': 'vim' }
 Plugin 'morhetz/gruvbox' 
+Plugin 'wikitopian/hardmode'
 
 call vundle#end()            " required
 
@@ -28,16 +26,6 @@ set termguicolors
 set background=dark
 
 " COLOR SCHEME SETTINGS 
-" OceanicNext
-"colorscheme OceanicNext
-"let g:airline_theme='oceanicnext'
-"let g:oceanic_next_terminal_bold = 1
-"let g:oceanic_next_terminal_italic = 1
-
-" Purify
-" colorscheme purify
-" let g:airline_theme='purify'
-
 " gruvbox
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
@@ -62,6 +50,12 @@ set guioptions-=r   " scrolls
 set smarttab
 set tabstop=4
 set background=dark
+
+" Hardmode - hardcore mode on!!                                                                                              |~                                       
+" Please don't cry baby!!! T_T                                                                                               |~                                       
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()                                                            |~                                       
+let g:HardMode_level = 'wannabe'                                                                                             |~                                       
+let g:HardMode_hardmode_msg = 'Never give up, never surrender!'
 
 " NerdTree settings  *************
 map <F3> :NERDTreeToggle<CR> " Ignore files with extentions:
