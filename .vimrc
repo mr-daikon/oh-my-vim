@@ -56,15 +56,19 @@ autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 let g:HardMode_level = 'wannabe'
 let g:HardMode_hardmode_msg = 'Never give up, never surrender!'
 
+
 " NerdTree settings  *************
 map <F3> :NERDTreeToggle<CR> " Ignore files with extentions:
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
-autocmd vimenter * NERDTree " Opend tree as vim start up
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Tagbar settings *****************
 autocmd vimenter * TagbarToggle
 let g:tagbar_autofocus = 0
 map <F4> :TagbarToggle<CR>
+
 
 " Airline settigs
 set laststatus=2
