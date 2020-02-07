@@ -1,5 +1,5 @@
 " .VIMRC CONFIG FILE
-" Writed by mr.daikon in Feb, 2020
+" Written by mr.daikon in Feb, 2020
 " So here we go...
 
 
@@ -33,7 +33,7 @@ call vundle#end()
 "--------------------------------------
 " Main settings
 " -------------------------------------
-set encoding=utf-8	" always use utf-8 encoding
+set encoding=utf-8		" always use utf-8 encoding
 set hidden				" allows switch from an unsaved buffer without saving it first
 set wildmenu 			" better command line completion
 set showcmd				" shows partial commads in the last line of the screen
