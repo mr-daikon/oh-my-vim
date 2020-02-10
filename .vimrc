@@ -26,6 +26,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'preservim/nerdcommenter'
 Plugin 'morhetz/gruvbox' 
 Plugin 'wikitopian/hardmode'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 
@@ -88,8 +89,8 @@ map <F4> :TagbarToggle<CR>
 
 
 "--------------------------------------
-" Hardmode - hardcore mode on!!
-" Please don't cry baby!!! T_T
+" Hardmode - hardcore mode is on!!
+" Please don't cry!!! x_x
 "--------------------------------------
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 let g:HardMode_level = 'wannabe'
