@@ -27,6 +27,7 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'morhetz/gruvbox' 
 Plugin 'wikitopian/hardmode'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 
@@ -52,6 +53,7 @@ set cmdheight=2
 set number 				" display line number on the left
 set rnu 				" display related row numbers
 set sm 					" show matching braces
+set cursorline			" show a visual line under the cursor's current line
 
 set guioptions-=m		" hide menu bar 
 set guioptions-=T		" hide toolbar
@@ -78,14 +80,6 @@ set background=dark
 colorscheme gruvbox		" use gruvbox color scheme, it's very good looking
 let g:airline_theme='gruvbox'	"the same theme for airline 
 
-
-"--------------------------------------
-" Mapings
-"--------------------------------------
-map Y y$
-noremap <C-L> :nohl<CR><C-L>
-map <F3> :NERDTreeToggle<CR> 
-map <F4> :TagbarToggle<CR>
 
 
 "--------------------------------------
@@ -151,7 +145,7 @@ let g:pymode_lint_write = 1			" Enable checkings on file save
 let g:pymode_lint_on_fly = 0		" Disable check code when editing (on the fly)
 let g:pymode_lint_message = 1		" Show error message if cursor placed at the error line
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']	" Default code checkers
-let g:pymode_lint_ignore = "[E501,W601,C0110]"
+let g:pymode_lint_ignore = "[E501,W,]"
 let g:pymode_lint_cwindow = 1		" Auto open cwindow (quickfix) if any errors have been found
 let g:pymode_lint_signs = 1			" Place error |signs| (WW, CC, RR and so on)
 
@@ -163,6 +157,41 @@ let g:pymode_syntax_all = 1			" Enable all python highligths
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
-let g:pymode_run = 0 				" Disable program run
+let g:pymode_run = 1				" Enable program run
+let g:pymode_run_bind = '<leader>r'
 
 
+"--------------------------------------
+" Mapings
+"--------------------------------------
+let mapleader = ","
+map Y y$
+noremap <C-Q> :nohl<CR>
+map <F3> :NERDTreeToggle<CR> 
+map <F4> :TagbarToggle<CR>
+noremap <C-h> <C-W>h
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-l> <C-W>l
+"map <silent> <C-h> :call WinMove('h')<CR>
+"map <silent> <C-j> :call WinMove('j')<CR>
+"map <silent> <C-k> :call WinMove('k')<CR>
+"map <silent> <C-l> :call WinMove('l')<CR>
+
+
+"--------------------------------------
+" Custom fucntions section
+"--------------------------------------
+
+function! WinMove(key)
+		let t:curwin = winnr()
+		exec "wincmd ".a:key
+		if (t:curwin == winnr())
+			if (match(a:key, '[jk]'))
+				wincmd v
+			else
+				wincmd s
+			endif
+			exec "wincmd ".a.key
+		endif
+endfunction
