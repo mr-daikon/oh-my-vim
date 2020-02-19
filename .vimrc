@@ -5,6 +5,7 @@
 
 set nocompatible
 filetype off
+filetype plugin on
 filetype plugin indent on
 syntax on
 
@@ -28,6 +29,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'wikitopian/hardmode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 
@@ -62,6 +64,7 @@ set guioptions-=r		" hide scrolls
 set nobackup			" no backup files
 set nowritebackup		" only in case you don't want a backup file while editing
 set noswapfile			" no swap files
+
 
 
 "--------------------------------------
@@ -114,6 +117,17 @@ let g:tagbar_autofocus = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+
+"--------------------------------------
+" NERD Commenter settings
+"--------------------------------------
+"let g:NERDSpaceDelims = 1 			" Add spaces after comment delimiters
+"let g:NERDCommentEmptyLines = 1 	" Allow commenting empty lines
+"let g:NERDTrimTrailingWhitespaces = 1 	"Enable trimming whitespaces when uncommenting
+let g:NERDDefaultAlign = 'left'
+
+
 
 
 "--------------------------------------
