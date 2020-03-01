@@ -128,7 +128,10 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:NERDDefaultAlign = 'left'
 
 
-
+"--------------------------------------
+" Jedi-vim settings
+"--------------------------------------
+let g:jedi#popup_on_dot = 0
 
 "--------------------------------------
 " Python-mode settings
