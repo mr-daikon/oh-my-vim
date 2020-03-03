@@ -30,7 +30,6 @@ Plugin 'wikitopian/hardmode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
-Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 
@@ -134,12 +133,23 @@ let g:NERDDefaultAlign = 'left'
 "--------------------------------------
 let g:jedi#popup_on_dot = 0
 
+
+"--------------------------------------
+" Vim-flake8 settings
+"--------------------------------------
+
+
+
 "--------------------------------------
 " Python-mode settings
 "--------------------------------------
 " Python-mode is a vim plugin that allows you to use the pylint, rope, and pydoc
 " libraries in vim to provide features like python code bug checking,
 " refactoring, and some other useful things.
+
+" UPD. 03/03/2020 
+" Due to I didn't manage to set up the python-mode linter, 
+" I was forced to use vim-flake8, 
 
 let g:pymode = 1 
 let g:pymode_warnings = 0 			" Turn off plugin warnings
@@ -148,14 +158,16 @@ let g:pymode_options = 1			" Turn on default python options
 let g:pymode_motion = 1				" Enable pymode motions
 
 let g:pymode_rope = 0				" Turn off auto complete completly because of using jedi-vim	
-let g:pymode_rope_completion = 0
-let g:pymode_rope_complete_on_dot = 0
 
 let g:pymode_doc = 1				" Turn on documentation
 let g:pymode_doc_bind = 'K'			" Bind key for current word documentation show
 
 let g:pymode_virtualenv = 1			" Turn on virtualenv detection
-let g:pymode_lint = 0				" Disable pylint here, because it doesn't work and I use the vim-flake8
+
+let g:pymode_lint = 1 				" Enable pylint 
+let g:pymode_lint_message = 1 		" Show error message if cursor placed at the error line
+let g:pymode_lint_ignore = ["E501", "W",]
+
 
 let g:pymode_syntax = 1 			" Turn on pymode syntax
 let g:pymode_syntax_all = 1			" Enable all python highligths
