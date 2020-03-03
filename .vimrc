@@ -19,7 +19,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'python-mode/python-mode'
+Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' } 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
@@ -30,6 +30,7 @@ Plugin 'wikitopian/hardmode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 
@@ -140,12 +141,10 @@ let g:jedi#popup_on_dot = 0
 " libraries in vim to provide features like python code bug checking,
 " refactoring, and some other useful things.
 
-let g:pymode = 1
+let g:pymode = 1 
 let g:pymode_warnings = 0 			" Turn off plugin warnings
 let g:pymode_trim_whitespaces = 1	" Trim unused whitespaces on save
 let g:pymode_options = 1			" Turn on default python options
-let g:pymode_python = 'python3'		" Use python ver.3 
-let g_pymode_folding = 1			" Enable folding
 let g:pymode_motion = 1				" Enable pymode motions
 
 let g:pymode_rope = 0				" Turn off auto complete completly because of using jedi-vim	
@@ -156,26 +155,15 @@ let g:pymode_doc = 1				" Turn on documentation
 let g:pymode_doc_bind = 'K'			" Bind key for current word documentation show
 
 let g:pymode_virtualenv = 1			" Turn on virtualenv detection
-
-let g:pymode_lint = 1				" Enable pylint 
-let g:pymode_lint_write = 1			" Enable checkings on file save
-let g:pymode_lint_on_fly = 0		" Disable check code when editing (on the fly)
-let g:pymode_lint_message = 1		" Show error message if cursor placed at the error line
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']	" Default code checkers
-let g:pymode_lint_ignore = "[E501,W,]"
-let g:pymode_lint_cwindow = 1		" Auto open cwindow (quickfix) if any errors have been found
-let g:pymode_lint_signs = 1			" Place error |signs| (WW, CC, RR and so on)
-
-let g:pymode_breakpoint = 1 		" Enable pymode breakpoints
-let g:pymode_breakpoint_bind = '<leader>b' 	" Bind key for breakpoint set
+let g:pymode_lint = 0				" Disable pylint here, because it doesn't work and I use the vim-flake8
 
 let g:pymode_syntax = 1 			" Turn on pymode syntax
 let g:pymode_syntax_all = 1			" Enable all python highligths
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
-let g:pymode_run = 1				" Enable program run
-let g:pymode_run_bind = '<leader>r'
+"let g:pymode_run = 1				" Enable program run
+"let g:pymode_run_bind = '<leader>r'
 
 
 "--------------------------------------
