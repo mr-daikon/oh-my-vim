@@ -1,6 +1,6 @@
-" .VIMRC CONFIG FILE
-" Written by mr.daikon in Feb, 2020
-" So here we go...
+
+" .VIMRC configuration file for Golang programming
+" Written by mr.daikon Mar, 2020
 
 
 set nocompatible
@@ -19,18 +19,16 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' } 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'preservim/nerdcommenter'
 Plugin 'morhetz/gruvbox' 
 Plugin 'wikitopian/hardmode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'ervandew/supertab'
-
+Plugin 'fatih/vim-go'
 call vundle#end()
 
 
@@ -126,46 +124,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 "let g:NERDCommentEmptyLines = 1 	" Allow commenting empty lines
 "let g:NERDTrimTrailingWhitespaces = 1 	"Enable trimming whitespaces when uncommenting
 let g:NERDDefaultAlign = 'left'
-
-
-"--------------------------------------
-" Jedi-vim settings
-"--------------------------------------
-let g:jedi#popup_on_dot = 0
-
-
-"--------------------------------------
-" Python-mode settings
-"--------------------------------------
-" Python-mode is a vim plugin that allows you to use the pylint, rope, and pydoc
-" libraries in vim to provide features like python code bug checking,
-" refactoring, and some other useful things.
-
-let g:pymode = 1 
-let g:pymode_warnings = 0 			" Turn off plugin warnings
-let g:pymode_trim_whitespaces = 1	" Trim unused whitespaces on save
-let g:pymode_options = 1			" Turn on default python options
-let g:pymode_motion = 1				" Enable pymode motions
-
-let g:pymode_rope = 0				" Turn off auto complete completly because of using jedi-vim	
-
-let g:pymode_doc = 1				" Turn on documentation
-let g:pymode_doc_bind = 'K'			" Bind key for current word documentation show
-
-let g:pymode_virtualenv = 1			" Turn on virtualenv detection
-
-let g:pymode_lint = 1 				" Enable pylint 
-let g:pymode_lint_message = 1 		" Show error message if cursor placed at the error line
-let g:pymode_lint_ignore = ["E501", "W",]
-
-
-let g:pymode_syntax = 1 			" Turn on pymode syntax
-let g:pymode_syntax_all = 1			" Enable all python highligths
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-"let g:pymode_run = 1				" Enable program run
-"let g:pymode_run_bind = '<leader>r'
 
 
 "--------------------------------------
