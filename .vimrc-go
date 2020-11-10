@@ -21,14 +21,13 @@ Plugin 'preservim/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Yggdroot/indentLine'
 Plugin 'preservim/nerdcommenter'
 Plugin 'morhetz/gruvbox' 
 Plugin 'wikitopian/hardmode'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()
 
 
