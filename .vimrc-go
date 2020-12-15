@@ -123,6 +123,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 "let g:NERDCommentEmptyLines = 1 	" Allow commenting empty lines
 "let g:NERDTrimTrailingWhitespaces = 1 	"Enable trimming whitespaces when uncommenting
 let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 
 
 "--------------------------------------
@@ -158,4 +159,19 @@ function! WinMove(key)
 			endif
 			exec "wincmd ".a.key
 		endif
+endfunction
+
+
+" Use tab for trigger completion with characters ahead and navigate.
+" " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" " other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+       \ pumvisible() ? "\<C-n>" :
+       \ <SID>check_back_space() ? "\<TAB>" :
+       \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
