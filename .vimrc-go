@@ -28,6 +28,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'tpope/vim-surround'
 call vundle#end()
 
 
