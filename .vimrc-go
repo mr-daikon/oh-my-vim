@@ -63,6 +63,12 @@ set nobackup			" no backup files
 set nowritebackup		" only in case you don't want a backup file while editing
 set noswapfile			" no swap files
 
+"Russian support
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+set spelllang=ru_yo, en_us
 
 
 "--------------------------------------
