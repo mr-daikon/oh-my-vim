@@ -84,7 +84,7 @@ set shiftwidth=4
 set termguicolors
 set background=dark
 
-colorscheme gruvbox		" use gruvbox color scheme, it's very good looking
+colorscheme gruvbox		" use gruvbox color scheme, cuz I like it
 let g:airline_theme='gruvbox'	"the same theme for airline 
 
 
